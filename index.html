@@ -7,14 +7,14 @@
   <title>Construction Business</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <!-- Header Section -->
-  <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- Navbar -->
+  <header class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="images/logo.png" alt="Construction Logo" width="50">
-        Construction Co.
+        <img src="images/logo.png" alt="Logo" width="50"> Construction Co.
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -23,14 +23,16 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link active" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
   </header>
 
-  <!-- Banner Section -->
-  <section class="banner" style="background-image: url('images/banner.jpg');">
+  <!-- Banner -->
+  <section class="banner">
     <div class="container text-center text-white">
       <h1>Welcome to Construction Co.</h1>
       <p>Building Dreams, Crafting Excellence</p>
@@ -42,7 +44,7 @@
   <section id="about" class="py-5">
     <div class="container text-center">
       <h2>About Us</h2>
-      <p>We are a leading construction company providing top-notch services for residential, commercial, and industrial projects.</p>
+      <p>We are a leading construction company offering premium services for all your building needs.</p>
     </div>
   </section>
 
@@ -52,19 +54,71 @@
       <h2 class="text-center">Our Services</h2>
       <div class="row mt-4">
         <div class="col-md-4 text-center">
-          <img src="images/construction.jpg" alt="Construction" class="img-fluid rounded-circle mb-3" width="150">
+          <img src="images/construction.jpg" alt="Service" class="img-fluid rounded-circle mb-3" width="150">
           <h4>Construction</h4>
-          <p>High-quality construction services for all your needs.</p>
+          <p>Expert construction services for homes and businesses.</p>
         </div>
         <div class="col-md-4 text-center">
-          <img src="images/construction.jpg" alt="Renovation" class="img-fluid rounded-circle mb-3" width="150">
+          <img src="images/construction.jpg" alt="Service" class="img-fluid rounded-circle mb-3" width="150">
           <h4>Renovation</h4>
-          <p>Transform your spaces with our expert renovation solutions.</p>
+          <p>Transform and modernize your spaces with our renovation services.</p>
         </div>
         <div class="col-md-4 text-center">
-          <img src="images/construction.jpg" alt="Consultation" class="img-fluid rounded-circle mb-3" width="150">
+          <img src="images/construction.jpg" alt="Service" class="img-fluid rounded-circle mb-3" width="150">
           <h4>Consultation</h4>
           <p>Professional advice for your construction projects.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-5">
+    <div class="container text-center">
+      <h2>What Our Clients Say</h2>
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <img src="images/testimonial.jpg" alt="Client" class="img-fluid rounded-circle mb-3" width="100">
+          <p>"Construction Co. provided exceptional service for our new office project."</p>
+          <p><strong>- John Doe</strong></p>
+        </div>
+        <div class="col-md-6">
+          <img src="images/testimonial.jpg" alt="Client" class="img-fluid rounded-circle mb-3" width="100">
+          <p>"Highly professional and reliable team. Highly recommend them!"</p>
+          <p><strong>- Jane Smith</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center">Frequently Asked Questions</h2>
+      <div class="accordion mt-4" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">
+              What services do you provide?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+              We provide construction, renovation, and consultation services.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              How can I get a quote?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              Contact us via the form below or call us directly for a free quote.
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -80,21 +134,22 @@
           <p><strong>Mobile:</strong> +1 234 567 890</p>
           <p><strong>Email:</strong> contact@constructionco.com</p>
           <p><strong>Address:</strong> 123 Main Street, City, Country</p>
+          <iframe src="https://www.google.com/maps/embed" width="100%" height="200" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="col-md-6">
           <h4>Send a Message</h4>
-          <form>
+          <form id="contactForm">
             <div class="mb-3">
               <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Your Name">
+              <input type="text" class="form-control" id="name" placeholder="Your Name" required>
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="Your Email">
+              <input type="email" class="form-control" id="email" placeholder="Your Email" required>
             </div>
             <div class="mb-3">
               <label for="message" class="form-label">Message</label>
-              <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+              <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Send Message</button>
           </form>
@@ -108,6 +163,9 @@
     <p>&copy; 2024 Construction Co. All Rights Reserved.</p>
   </footer>
 
+  <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
