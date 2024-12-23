@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Premium Construction Business Solutions for Your Needs">
-  <title>Business Co. - Your Trusted Partner</title>
+  <title>Business Co. - Construction Solutions</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -13,14 +13,14 @@
   <header class="navbar">
     <div class="container">
       <a href="#" class="logo">
-        <img src="images/logo.png" alt="Business Logo" />
+        <img src="images/logo.png" alt="Business Logo">
       </a>
       <nav>
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#team">Team</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -31,9 +31,9 @@
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="container">
-      <h1>Your Trusted Business Partner</h1>
-      <p>Providing high-quality solutions to meet all your construction needs.</p>
-      <a href="#services" class="btn btn-primary">Learn More</a>
+      <h1>Innovative Construction Solutions</h1>
+      <p>Transforming visions into reality with excellence and precision.</p>
+      <a href="#services" class="btn btn-primary">Explore Services</a>
     </div>
   </section>
 
@@ -42,20 +42,25 @@
     <div class="container">
       <h2>Our Services</h2>
       <div class="service-list">
-        <div class="service">
+        <div class="service-card">
           <i class="fas fa-building"></i>
-          <h3>Construction</h3>
-          <p>End-to-end construction services tailored to your needs.</p>
+          <h3>Commercial Construction</h3>
+          <p>Comprehensive solutions for large-scale commercial projects.</p>
         </div>
-        <div class="service">
+        <div class="service-card">
+          <i class="fas fa-home"></i>
+          <h3>Residential Construction</h3>
+          <p>Custom home building tailored to your style and needs.</p>
+        </div>
+        <div class="service-card">
           <i class="fas fa-tools"></i>
           <h3>Renovation</h3>
-          <p>Innovative renovation solutions to upgrade your spaces.</p>
+          <p>Innovative renovation services to modernize spaces.</p>
         </div>
-        <div class="service">
-          <i class="fas fa-lightbulb"></i>
-          <h3>Consultation</h3>
-          <p>Expert advice to bring your projects to life.</p>
+        <div class="service-card">
+          <i class="fas fa-chart-line"></i>
+          <h3>Project Management</h3>
+          <p>End-to-end project management ensuring timely delivery.</p>
         </div>
       </div>
     </div>
@@ -66,21 +71,40 @@
     <div class="container">
       <h2>Our Projects</h2>
       <div class="portfolio-gallery">
-        <img src="images/portfolio/project1.jpg" alt="Project 1" />
-        <img src="images/portfolio/project2.jpg" alt="Project 2" />
-        <img src="images/portfolio/project1.jpg" alt="Project 3" />
-        <img src="images/portfolio/project2.jpg" alt="Project 4" />
+        <div class="portfolio-item">
+          <img src="images/portfolio/project1.jpg" alt="Project 1">
+          <h3>Modern Office Complex</h3>
+        </div>
+        <div class="portfolio-item">
+          <img src="images/portfolio/project2.jpg" alt="Project 2">
+          <h3>Luxury Residential Villa</h3>
+        </div>
+        <div class="portfolio-item">
+          <img src="images/portfolio/project1.jpg" alt="Project 3">
+          <h3>Urban High-Rise</h3>
+        </div>
+        <div class="portfolio-item">
+          <img src="images/portfolio/project2.jpg" alt="Project 4">
+          <h3>Eco-Friendly Home</h3>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="about">
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials">
     <div class="container">
-      <h2>About Us</h2>
-      <p>
-        Business Co. is dedicated to delivering top-notch services. Our mission is to innovate and excel in construction solutions.
-      </p>
+      <h2>What Our Clients Say</h2>
+      <div class="testimonial-carousel">
+        <div class="testimonial">
+          <p>"Business Co. delivered exceptional results. Highly recommend them for any construction project!"</p>
+          <h3>- Jane Doe</h3>
+        </div>
+        <div class="testimonial">
+          <p>"Their professionalism and attention to detail are unparalleled. Fantastic experience!"</p>
+          <h3>- John Smith</h3>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -90,12 +114,12 @@
       <h2>Meet Our Team</h2>
       <div class="team-list">
         <div class="team-member">
-          <img src="images/team1.jpg" alt="Team Member 1" />
+          <img src="images/team1.jpg" alt="Team Member 1">
           <h3>Jane Doe</h3>
           <p>Project Manager</p>
         </div>
         <div class="team-member">
-          <img src="images/team2.jpg" alt="Team Member 2" />
+          <img src="images/team2.jpg" alt="Team Member 2">
           <h3>John Smith</h3>
           <p>Lead Engineer</p>
         </div>
@@ -108,22 +132,26 @@
     <div class="container">
       <h2>Contact Us</h2>
       <form>
-        <input type="text" placeholder="Name" required />
-        <input type="email" placeholder="Email" required />
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
         <textarea placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
+        <button type="submit" class="btn btn-secondary">Send Message</button>
       </form>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2024 Business Co. All rights reserved.</p>
-    <ul>
-      <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-      <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-    </ul>
+    <div class="container">
+      <p>&copy; 2024 Business Co. All Rights Reserved.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
