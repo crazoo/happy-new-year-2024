@@ -1,32 +1,30 @@
+/* General Styles */
 body {
   font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.banner {
-  background-image: url('images/banner.jpg');
-  background-size: cover;
-  background-position: center;
+/* Navbar */
+.navbar {
+  background: #333;
   color: white;
+  padding: 15px;
+}
+
+/* Hero Section */
+.hero {
+  background: url('images/banner.jpg') no-repeat center center/cover;
+  color: white;
+  text-align: center;
   padding: 100px 0;
 }
 
-.sticky-top {
-  z-index: 9999;
-}
-
-.back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #007bff;
+/* Footer */
+footer {
+  background: #222;
   color: white;
-  padding: 10px 15px;
-  border-radius: 50%;
-  display: none;
-  font-size: 18px;
   text-align: center;
-}
-
-.back-to-top:hover {
-  background: #0056b3;
+  padding: 20px;
 }
