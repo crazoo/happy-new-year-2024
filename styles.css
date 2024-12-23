@@ -1,23 +1,32 @@
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+  font-family: 'Arial', sans-serif;
 }
 
 .banner {
+  background-image: url('images/banner.jpg');
   background-size: cover;
   background-position: center;
   color: white;
   padding: 100px 0;
 }
 
-.banner h1 {
-  font-size: 3rem;
+.sticky-top {
+  z-index: 9999;
 }
 
-.banner p {
-  font-size: 1.5rem;
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50%;
+  display: none;
+  font-size: 18px;
+  text-align: center;
 }
 
-#about, #services, #contact {
-  margin-top: 50px;
+.back-to-top:hover {
+  background: #0056b3;
 }
