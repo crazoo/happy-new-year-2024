@@ -22,12 +22,63 @@ const countdown = () => {
 
 setInterval(countdown, 1000);
 
-// Fireworks Button
-function lightSparkler() {
-  alert("🎇 Boom! Happy New Year 2025! 🎇");
+// Fireworks Animation
+const canvas = document.getElementById("fireworksCanvas");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+function createFirework(x, y) {
+  const particleCount = 100;
+  for (let i = 0; i < particleCount; i++) {
+    particles.push({
+      x: x,
+      y: y,
+      angle: (Math.PI * 2 * i) / particleCount,
+      speed: Math.random() * 5 + 2,
+      radius: Math.random() * 2 + 1,
+      opacity: 1,
+      color: `hsl(${Math.random() * 360}, 100%, 50%)`,
+    });
+  }
 }
 
-// Particles.js Config
-particlesJS.load('particles-js', 'particles.json', () => {
-  console.log('Particles.js loaded!');
+function updateParticles() {
+  particles.forEach((particle, index) => {
+    particle.x += Math.cos(particle.angle) * particle.speed;
+    particle.y += Math.sin(particle.angle) * particle.speed;
+    particle.opacity -= 0.02;
+
+    if (particle.opacity <= 0) particles.splice(index, 1);
+  });
+}
+
+function drawParticles() {
+  particles.forEach((particle) => {
+    ctx.beginPath();
+    ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(${particle.color}, ${particle.opacity})`;
+    ctx.fill();
+    ctx.closePath();
+  });
+}
+
+function loop() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  updateParticles();
+  drawParticles();
+  requestAnimationFrame(loop);
+}
+
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 });
+
+canvas.addEventListener("click", (e) => {
+  createFirework(e.clientX, e.clientY);
+});
+
+loop();
