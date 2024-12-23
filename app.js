@@ -26,9 +26,17 @@ setInterval(countdown, 1000);
 function lightSparkler() {
   const sparkler = document.createElement("div");
   sparkler.className = "sparkler";
+  sparkler.style.position = "fixed";
+  sparkler.style.left = "50%";
+  sparkler.style.top = "50%";
+  sparkler.style.width = "100px";
+  sparkler.style.height = "100px";
+  sparkler.style.background = "radial-gradient(circle, gold, transparent)";
+  sparkler.style.borderRadius = "50%";
+  sparkler.style.animation = "sparkle 2s infinite";
   document.body.appendChild(sparkler);
 
   setTimeout(() => {
     document.body.removeChild(sparkler);
-  }, 3000);
+  }, 2000);
 }
