@@ -1,69 +1,23 @@
-/* General Styling */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  overflow: hidden;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
   color: white;
+  padding: 100px 0;
 }
 
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+.banner h1 {
+  font-size: 3rem;
 }
 
-.container {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 100px 20px;
-}
-
-h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 4rem;
-  color: gold;
-  text-shadow: 0 5px 15px rgba(255, 215, 0, 0.8);
-  margin-bottom: 10px;
-}
-
-h1 .neon {
-  color: #ff6f61;
-  text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff5733, 0 0 30px #ff6f61;
-}
-
-.sub-text {
+.banner p {
   font-size: 1.5rem;
-  color: #dcdcdc;
 }
 
-.countdown {
-  display: flex;
-  justify-content: center;
-  margin: 20px auto;
-  gap: 20px;
-}
-
-.countdown div {
-  background: linear-gradient(45deg, gold, #ff6f61);
-  padding: 15px 25px;
-  border-radius: 10px;
-  color: white;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.countdown span {
-  display: block;
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-footer {
+#about, #services, #contact {
   margin-top: 50px;
-  color: #dcdcdc;
-  font-size: 0.9rem;
 }
