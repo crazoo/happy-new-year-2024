@@ -3,23 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy New Year 2025</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <meta name="description" content="Professional Construction Services for Your Needs.">
+  <title>Construction Business</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-  <canvas id="fireworksCanvas"></canvas>
-  <div class="container">
-    <h1>Happy <span class="neon">New Year</span> 2025</h1>
-    <p class="sub-text">A magical year awaits you. Celebrate with joy!</p>
-    <div class="countdown">
-      <div><span id="days">00</span><small>Days</small></div>
-      <div><span id="hours">00</span><small>Hours</small></div>
-      <div><span id="minutes">00</span><small>Minutes</small></div>
-      <div><span id="seconds">00</span><small>Seconds</small></div>
+  <!-- Header Section -->
+  <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="images/logo.png" alt="Construction Logo" width="50">
+        Construction Co.
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </div>
-    <footer>© 2025 Crazoo. All Rights Reserved.</footer>
-  </div>
-  <script src="script.js"></script>
+  </header>
+
+  <!-- Banner Section -->
+  <section class="banner" style="background-image: url('images/banner.jpg');">
+    <div class="container text-center text-white">
+      <h1>Welcome to Construction Co.</h1>
+      <p>Building Dreams, Crafting Excellence</p>
+      <a href="#contact" class="btn btn-primary">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-5">
+    <div class="container text-center">
+      <h2>About Us</h2>
+      <p>We are a leading construction company providing top-notch services for residential, commercial, and industrial projects.</p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center">Our Services</h2>
+      <div class="row mt-4">
+        <div class="col-md-4 text-center">
+          <img src="images/construction.jpg" alt="Construction" class="img-fluid rounded-circle mb-3" width="150">
+          <h4>Construction</h4>
+          <p>High-quality construction services for all your needs.</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <img src="images/construction.jpg" alt="Renovation" class="img-fluid rounded-circle mb-3" width="150">
+          <h4>Renovation</h4>
+          <p>Transform your spaces with our expert renovation solutions.</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <img src="images/construction.jpg" alt="Consultation" class="img-fluid rounded-circle mb-3" width="150">
+          <h4>Consultation</h4>
+          <p>Professional advice for your construction projects.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="text-center">Contact Us</h2>
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <h4>Contact Details</h4>
+          <p><strong>Mobile:</strong> +1 234 567 890</p>
+          <p><strong>Email:</strong> contact@constructionco.com</p>
+          <p><strong>Address:</strong> 123 Main Street, City, Country</p>
+        </div>
+        <div class="col-md-6">
+          <h4>Send a Message</h4>
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Your Name">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Your Email">
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-center text-white py-3">
+    <p>&copy; 2024 Construction Co. All Rights Reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
