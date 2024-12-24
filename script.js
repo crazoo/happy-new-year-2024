@@ -34,21 +34,21 @@ document.getElementById("playMusic").addEventListener("click", () => {
   }
 });
 
-// Theme Toggle
-document.getElementById("toggleTheme").addEventListener("click", () => {
-  document.body.classList.toggle("dark-theme");
-});
+// Share Functionality
+document.getElementById("share").addEventListener("click", async () => {
+  const url = "https://example.com"; // Replace with your website link
+  const text = "Happy New Year 2025! Celebrate with us 🎉✨";
 
-// Quote Carousel
-const quotes = [
-  "Cheers to a new year and another chance to get it right!",
-  "Write it on your heart that every day is the best day in the year!",
-  "Every moment is a fresh beginning.",
-  "New year, new adventures, new memories!",
-  "Celebrate endings—for they precede new beginnings."
-];
-let quoteIndex = 0;
-setInterval(() => {
-  quoteIndex = (quoteIndex + 1) % quotes.length;
-  document.getElementById("quote").innerText = quotes[quoteIndex];
-}, 5000);
+  if (navigator.share) {
+    try {
+      await navigator.share({ title: "Happy New Year 2025", text, url });
+      alert("Thank you for sharing!");
+    } catch (err) {
+      alert("Failed to share: " + err.message);
+    }
+  } else {
+    navigator.clipboard.writeText(url).then(() => {
+      alert("Link copied to clipboard! Share it with your friends.");
+    });
+  }
+});
