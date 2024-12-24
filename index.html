@@ -4,31 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy New Year 2025</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <canvas id="fireworksCanvas"></canvas>
   <div class="content">
-    <h1 class="floating-text">Happy <span class="highlight">New Year</span> 2025!</h1>
-    <p class="sub-text">Celebrate the new beginnings with joy and success!</p>
-    
-    <div class="countdown">
-      <div><span id="days">00</span><small>Days</small></div>
-      <div><span id="hours">00</span><small>Hours</small></div>
-      <div><span id="minutes">00</span><small>Minutes</small></div>
-      <div><span id="seconds">00</span><small>Seconds</small></div>
-    </div>
+    <header class="header">
+      <h1 class="floating-text">✨ Happy <span class="highlight">New Year</span> 2025! 🎉</h1>
+      <p class="tagline">"A new year, a new journey. Let’s make it magical!"</p>
+    </header>
 
-    <div class="quotes-carousel">
-      <p id="quote">"Cheers to a new year and another chance to get it right!"</p>
-    </div>
+    <section class="countdown-section">
+      <div class="countdown">
+        <div><span id="days">00</span><small>Days</small></div>
+        <div><span id="hours">00</span><small>Hours</small></div>
+        <div><span id="minutes">00</span><small>Minutes</small></div>
+        <div><span id="seconds">00</span><small>Seconds</small></div>
+      </div>
+    </section>
 
-    <div class="buttons">
-      <button id="toggleTheme">Toggle Light/Dark Theme</button>
-      <button id="playMusic">Play Music</button>
-      <button id="share">Share on Social Media</button>
-    </div>
+    <section class="interactive-section">
+      <div class="quote-box">
+        <h2>💬 Inspiration for 2025</h2>
+        <p id="quote" class="quote-text">"Cheers to a new year and another chance to get it right!"</p>
+      </div>
+
+      <div class="buttons">
+        <button id="toggleTheme" class="btn">Switch Theme</button>
+        <button id="playMusic" class="btn">Play Music 🎵</button>
+        <button id="share" class="btn">Share the Joy 📤</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Crafted with ❤️ to celebrate the magic of 2025!</p>
+    </footer>
   </div>
 
   <audio id="backgroundMusic" loop>
