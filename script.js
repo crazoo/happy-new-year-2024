@@ -1,4 +1,3 @@
-// Countdown Timer
 const countdown = () => {
   const newYear = new Date("January 1, 2025 00:00:00").getTime();
   const now = new Date().getTime();
@@ -9,46 +8,46 @@ const countdown = () => {
   const hour = minute * 60;
   const day = hour * 24;
 
-  const days = Math.floor(gap / day);
-  const hours = Math.floor((gap % day) / hour);
-  const minutes = Math.floor((gap % hour) / minute);
-  const seconds = Math.floor((gap % minute) / second);
+  if (gap > 0) {
+    const days = Math.floor(gap / day);
+    const hours = Math.floor((gap % day) / hour);
+    const minutes = Math.floor((gap % hour) / minute);
+    const seconds = Math.floor((gap % minute) / second);
 
-  document.getElementById("days").innerText = days;
-  document.getElementById("hours").innerText = hours;
-  document.getElementById("minutes").innerText = minutes;
-  document.getElementById("seconds").innerText = seconds;
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
+  } else {
+    clearInterval(timer); // Stop the timer
+    showNewYearMessage();
+  }
 };
 
-setInterval(countdown, 1000);
+// Show New Year Message
+const showNewYearMessage = () => {
+  document.querySelector(".countdown-section").style.display = "none";
+  const newYearMessage = document.getElementById("newYearMessage");
+  newYearMessage.style.display = "block";
 
-// Music Control
-const music = document.getElementById("backgroundMusic");
-document.getElementById("playMusic").addEventListener("click", () => {
-  if (music.paused) {
-    music.play();
-    document.getElementById("playMusic").innerText = "Pause Music";
-  } else {
-    music.pause();
-    document.getElementById("playMusic").innerText = "Play Music";
-  }
-});
+  const message = "Wishing you and your loved ones a wonderful New Year filled with happiness, health, and success!";
+  typeMessage(message, document.getElementById("typingEffect"));
+};
 
-// Share Functionality
-document.getElementById("share").addEventListener("click", async () => {
-  const url = "https://example.com"; // Replace with your website link
-  const text = "Happy New Year 2025! Celebrate with us 🎉✨";
+// Typing Effect
+const typeMessage = (message, element) => {
+  let index = 0;
+  const speed = 100; // Typing speed
 
-  if (navigator.share) {
-    try {
-      await navigator.share({ title: "Happy New Year 2025", text, url });
-      alert("Thank you for sharing!");
-    } catch (err) {
-      alert("Failed to share: " + err.message);
+  const typingInterval = setInterval(() => {
+    if (index < message.length) {
+      element.textContent += message[index];
+      index++;
+    } else {
+      clearInterval(typingInterval);
     }
-  } else {
-    navigator.clipboard.writeText(url).then(() => {
-      alert("Link copied to clipboard! Share it with your friends.");
-    });
-  }
-});
+  }, speed);
+};
+
+// Start the countdown
+const timer = setInterval(countdown, 1000);
