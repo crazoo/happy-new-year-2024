@@ -9,18 +9,32 @@
 </head>
 <body>
   <canvas id="fireworksCanvas"></canvas>
-  <div id="confetti"></div>
   <div class="content">
     <h1 class="floating-text">Happy <span class="highlight">New Year</span> 2025!</h1>
-    <p class="sub-text">Wishing you a year filled with joy, success, and celebration!</p>
+    <p class="sub-text">Celebrate the new beginnings with joy and success!</p>
+    
     <div class="countdown">
       <div><span id="days">00</span><small>Days</small></div>
       <div><span id="hours">00</span><small>Hours</small></div>
       <div><span id="minutes">00</span><small>Minutes</small></div>
       <div><span id="seconds">00</span><small>Seconds</small></div>
     </div>
+
+    <div class="quotes-carousel">
+      <p id="quote">"Cheers to a new year and another chance to get it right!"</p>
+    </div>
+
+    <div class="buttons">
+      <button id="toggleTheme">Toggle Light/Dark Theme</button>
+      <button id="playMusic">Play Music</button>
+      <button id="share">Share on Social Media</button>
+    </div>
   </div>
-  <audio id="fireworksSound" src="https://example.com/fireworks.mp3"></audio>
+
+  <audio id="backgroundMusic" loop>
+    <source src="https://example.com/happy-new-year-music.mp3" type="audio/mp3">
+  </audio>
+
   <script src="script.js"></script>
 </body>
 </html>
