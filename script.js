@@ -20,34 +20,37 @@ const countdown = () => {
     document.getElementById("seconds").innerText = seconds;
   } else {
     clearInterval(timer); // Stop the timer
-    showNewYearMessage();
+    displayWishMessage();
   }
 };
 
-// Show New Year Message
-const showNewYearMessage = () => {
-  document.querySelector(".countdown-section").style.display = "none";
-  const newYearMessage = document.getElementById("newYearMessage");
-  newYearMessage.style.display = "block";
+const displayWishMessage = () => {
+  document.querySelector(".countdown-section").classList.add("hidden");
+  const wishSection = document.getElementById("wishSection");
+  wishSection.classList.remove("hidden");
 
-  const message = "Wishing you and your loved ones a wonderful New Year filled with happiness, health, and success!";
-  typeMessage(message, document.getElementById("typingEffect"));
+  const messages = [
+    "✨ Wishing you a magical and joyful 2025! ✨",
+    "🎉 May this year bring happiness and success to your life. 🎉",
+    "🌟 Start your year with love, laughter, and endless possibilities. 🌟",
+  ];
+
+  const typeEffect = (element, text, delay) => {
+    let index = 0;
+    const typing = setInterval(() => {
+      if (index < text.length) {
+        element.textContent += text[index];
+        index++;
+      } else {
+        clearInterval(typing);
+      }
+    }, delay);
+  };
+
+  const messageElement = document.querySelector(".celebration-message");
+  const textElement = document.querySelector(".celebration-text");
+  typeEffect(messageElement, messages[0], 100);
+  setTimeout(() => typeEffect(textElement, messages[1], 100), 2000);
 };
 
-// Typing Effect
-const typeMessage = (message, element) => {
-  let index = 0;
-  const speed = 100; // Typing speed
-
-  const typingInterval = setInterval(() => {
-    if (index < message.length) {
-      element.textContent += message[index];
-      index++;
-    } else {
-      clearInterval(typingInterval);
-    }
-  }, speed);
-};
-
-// Start the countdown
 const timer = setInterval(countdown, 1000);
