@@ -14,15 +14,15 @@ const countdown = () => {
   const minutes = Math.floor((gap % hour) / minute);
   const seconds = Math.floor((gap % minute) / second);
 
-  document.getElementById("days").innerText = days < 10 ? `0${days}` : days;
-  document.getElementById("hours").innerText = hours < 10 ? `0${hours}` : hours;
-  document.getElementById("minutes").innerText = minutes < 10 ? `0${minutes}` : minutes;
-  document.getElementById("seconds").innerText = seconds < 10 ? `0${seconds}` : seconds;
+  document.getElementById("days").innerText = days;
+  document.getElementById("hours").innerText = hours;
+  document.getElementById("minutes").innerText = minutes;
+  document.getElementById("seconds").innerText = seconds;
 };
 
 setInterval(countdown, 1000);
 
-// Background Music
+// Music Control
 const music = document.getElementById("backgroundMusic");
 document.getElementById("playMusic").addEventListener("click", () => {
   if (music.paused) {
@@ -34,30 +34,21 @@ document.getElementById("playMusic").addEventListener("click", () => {
   }
 });
 
-// Quotes Carousel
+// Theme Toggle
+document.getElementById("toggleTheme").addEventListener("click", () => {
+  document.body.classList.toggle("dark-theme");
+});
+
+// Quote Carousel
 const quotes = [
   "Cheers to a new year and another chance to get it right!",
   "Write it on your heart that every day is the best day in the year!",
   "Every moment is a fresh beginning.",
-  "New year, new adventures, new memories!"
+  "New year, new adventures, new memories!",
+  "Celebrate endings—for they precede new beginnings."
 ];
-
 let quoteIndex = 0;
 setInterval(() => {
   quoteIndex = (quoteIndex + 1) % quotes.length;
   document.getElementById("quote").innerText = quotes[quoteIndex];
-}, 4000);
-
-// Share Button
-document.getElementById("share").addEventListener("click", () => {
-  navigator.share({
-    title: "Happy New Year 2025",
-    text: "Celebrate with me! Check out this awesome New Year website!",
-    url: window.location.href
-  });
-});
-
-// Light/Dark Theme Toggle
-document.getElementById("toggleTheme").addEventListener("click", () => {
-  document.body.classList.toggle("dark-theme");
-});
+}, 5000);
