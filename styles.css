@@ -6,8 +6,8 @@ body {
   background: linear-gradient(120deg, #1a2a6c, #b21f1f, #fdbb2d);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
+  overflow: hidden;
   color: white;
-  overflow-x: hidden;
 }
 
 canvas {
@@ -19,13 +19,12 @@ canvas {
   z-index: 1;
 }
 
+/* Main Content */
 .content {
   position: relative;
   z-index: 3;
   text-align: center;
   padding: 20px;
-  min-height: 100vh;
-  overflow-y: auto;
 }
 
 .header h1 {
@@ -47,6 +46,7 @@ canvas {
   opacity: 0.9;
 }
 
+/* Countdown */
 .countdown-section {
   margin-top: 20px;
 }
@@ -79,16 +79,21 @@ canvas {
   margin-top: 5px;
 }
 
-.new-year-message {
-  margin-top: 20px;
+/* Wish Section */
+.wish-section {
+  text-align: center;
+  margin-top: 30px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hidden {
+  display: none;
 }
 
 .celebration-message {
   font-size: 2.5rem;
   color: #ffd700;
   text-shadow: 0 5px 20px rgba(255, 255, 0, 0.8);
-  margin-top: 20px;
-  animation: popEffect 1s ease-out infinite alternate;
 }
 
 .celebration-text {
@@ -99,36 +104,13 @@ canvas {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
-footer {
-  margin-top: 20px;
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-/* Mobile Styles */
-@media (max-width: 768px) {
-  .header h1 {
-    font-size: 2.5rem;
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-
-  .tagline {
-    font-size: 1.2rem;
-  }
-
-  .countdown span {
-    font-size: 1.5rem;
-  }
-
-  .countdown small {
-    font-size: 0.9rem;
-  }
-
-  .celebration-message {
-    font-size: 2rem;
-  }
-
-  .celebration-text {
-    font-size: 1rem;
+  to {
+    opacity: 1;
   }
 }
 
@@ -136,13 +118,4 @@ footer {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
-}
-
-@keyframes popEffect {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.1);
-  }
 }
