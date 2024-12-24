@@ -6,8 +6,8 @@ body {
   background: linear-gradient(120deg, #1a2a6c, #b21f1f, #fdbb2d);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
-  overflow: hidden;
   color: white;
+  overflow-x: hidden;
 }
 
 canvas {
@@ -19,12 +19,13 @@ canvas {
   z-index: 1;
 }
 
-/* Main Content */
 .content {
   position: relative;
   z-index: 3;
   text-align: center;
   padding: 20px;
+  min-height: 100vh;
+  overflow-y: auto;
 }
 
 .header h1 {
@@ -46,7 +47,6 @@ canvas {
   opacity: 0.9;
 }
 
-/* Countdown */
 .countdown-section {
   margin-top: 20px;
 }
@@ -79,51 +79,70 @@ canvas {
   margin-top: 5px;
 }
 
-/* Quotes Box */
-.quote-box {
-  margin-top: 30px;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.quote-box h2 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-}
-
-.quote-text {
-  font-size: 1.2rem;
-  font-style: italic;
-  opacity: 0.8;
-}
-
-/* Buttons */
-.buttons {
+.new-year-message {
   margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
 }
 
-.btn {
-  background: linear-gradient(45deg, #fdbb2d, #ff6f61);
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 25px;
+.celebration-message {
+  font-size: 2.5rem;
+  color: #ffd700;
+  text-shadow: 0 5px 20px rgba(255, 255, 0, 0.8);
+  margin-top: 20px;
+  animation: popEffect 1s ease-out infinite alternate;
+}
+
+.celebration-text {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-top: 10px;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+footer {
+  margin-top: 20px;
   font-size: 1rem;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-.btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+  }
+
+  .countdown span {
+    font-size: 1.5rem;
+  }
+
+  .countdown small {
+    font-size: 0.9rem;
+  }
+
+  .celebration-message {
+    font-size: 2rem;
+  }
+
+  .celebration-text {
+    font-size: 1rem;
+  }
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes popEffect {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
 }
