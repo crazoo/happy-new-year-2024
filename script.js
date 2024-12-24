@@ -31,7 +31,7 @@ canvas.height = window.innerHeight;
 let particles = [];
 
 function createFirework(x, y) {
-  const particleCount = 100;
+  const particleCount = 150;
   for (let i = 0; i < particleCount; i++) {
     particles.push({
       x: x,
@@ -72,13 +72,17 @@ function loop() {
   requestAnimationFrame(loop);
 }
 
-window.addEventListener("resize", () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-});
-
-canvas.addEventListener("click", (e) => {
-  createFirework(e.clientX, e.clientY);
-});
+canvas.addEventListener("click", (e) => createFirework(e.clientX, e.clientY));
+canvas.addEventListener("mousemove", (e) => createFirework(e.clientX, e.clientY));
 
 loop();
+
+// Background Music
+const music = new Audio("https://example.com/new-year-music.mp3"); // Replace with actual URL
+document.getElementById("musicToggle").addEventListener("click", () => {
+  if (music.paused) {
+    music.play();
+  } else {
+    music.pause();
+  }
+});
