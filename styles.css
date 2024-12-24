@@ -1,82 +1,37 @@
-/* General Styling */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  overflow: hidden;
-}
-
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-#confetti {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.content {
-  position: relative;
-  z-index: 3;
-  text-align: center;
-  color: white;
-}
-
-h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 6rem;
-  text-shadow: 0 5px 15px rgba(255, 215, 0, 0.8);
-  margin-bottom: 20px;
-  animation: float 3s ease-in-out infinite;
-}
-
-h1 .highlight {
-  color: #ff6f61;
-  text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff5733, 0 0 30px #ff6f61;
-}
-
-.sub-text {
-  font-size: 1.8rem;
-  margin-bottom: 30px;
-}
-
-.countdown {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.countdown div {
-  background: linear-gradient(45deg, gold, #ff6f61);
-  padding: 20px 30px;
-  border-radius: 15px;
-  text-align: center;
-  color: white;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.countdown span {
-  display: block;
-  font-size: 3rem;
-  font-weight: bold;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 4rem; /* Reduce size for mobile */
+    margin-bottom: 15px;
   }
-  50% {
-    transform: translateY(-20px);
+
+  .sub-text {
+    font-size: 1.2rem; /* Smaller sub-text */
+  }
+
+  .countdown div {
+    padding: 15px 20px; /* Adjust padding */
+  }
+
+  .countdown span {
+    font-size: 2.5rem; /* Reduce number size */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 3rem; /* Further reduction */
+  }
+
+  .sub-text {
+    font-size: 1rem; /* Compact sub-text */
+  }
+
+  .countdown div {
+    padding: 10px 15px; /* Narrow padding */
+  }
+
+  .countdown span {
+    font-size: 2rem; /* Compact countdown numbers */
   }
 }
